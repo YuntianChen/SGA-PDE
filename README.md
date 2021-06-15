@@ -27,6 +27,9 @@ If you encounter any problems in using the code, please contact Yuntian Chen: cy
 
 (8) MetaNN_generator.py: Optional module. Build the neural network (surrogate model) for generating Metadata and evaluate the neural network by RMSE and R2. This module is not used by default. More details about the Metadata can be found in [DL-PDE](https://arxiv.org/ftp/arxiv/papers/1908/1908.04463.pdf).
 
+![image](https://user-images.githubusercontent.com/41933063/122041299-5fabf880-ce0b-11eb-8045-611bf98070ff.png)
+Fig. 1. Flow chart of the symbolic genetic algorithm (SGA-PDE). The yellow boxes are the function terms in the form of trees, which constitute the candidate set. The green boxes represent the genetic algorithm specially designed to optimize the binary trees. The red boxes represent the performance assessment of the discovered PDE. 
+
 ## Data Preperation and Model Definition
 
 ### Dataset Decription
