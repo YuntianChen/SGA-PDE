@@ -15,7 +15,8 @@ configure.py: Experimental parameter setting and model hyperparameter setting. C
 
 
 
-MetaNN_generator.py: Optional module. Build the neural network (surrogate model) for generating Metadata and evaluate the neural network by RMSE and R2. This module is not used by default. More details about the Metadata can be found in DL-PDE (https://arxiv.org/ftp/arxiv/papers/1908/1908.04463.pdf).
+MetaNN_generator.py: Optional module. Build the neural network (surrogate model) for generating Metadata and evaluate the neural network by RMSE and R2. This module is not used by default. More details about the Metadata can be found in [DL-PDE](https://arxiv.org/ftp/arxiv/papers/1908/1908.04463.pdf).
+
 
 Data_generator.py: Optimal module. Generate the metadata and compare it with raw data. This module is not used by default. More details about the Metadata can be found in DL-PDE (https://arxiv.org/ftp/arxiv/papers/1908/1908.04463.pdf).
 
