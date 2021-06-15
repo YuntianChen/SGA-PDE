@@ -11,22 +11,21 @@ If you encounter any problems in using the code, please contact Yuntian Chen: cy
 
 # The guide for SGA-PDE:
 ## Contents
-configure.py: Experimental parameter setting and model hyperparameter setting. Contains the process of selecting a dataset (Burgers, KdV, Chafee-infante, PDE_divide, PDE_compound).
+(1) configure.py: Experimental parameter setting and model hyperparameter setting. Contains the process of selecting a dataset (Burgers, KdV, Chafee-infante, PDE_divide, PDE_compound).
 
-(1) setup.py: 1. Load data from Data_generator; 2. Evaluate the fitness between a PDE and observations (calculate the error between the left and right side of the PDE). The gradients involved in the PDE can be calculated by finite difference or autograd 3. Draw figures of the gradients of different orders, the left and right side of the given PDE. 4. Set the operators and operands in the SGA.
+(2) setup.py: 1. Load data from Data_generator; 2. Evaluate the fitness between a PDE and observations (calculate the error between the left and right side of the PDE). The gradients involved in the PDE can be calculated by finite difference or autograd 3. Draw figures of the gradients of different orders, the left and right side of the given PDE. 4. Set the operators and operands in the SGA.
 
-(2) tree.py: Define the node class and tree class in the binary tree, which correspond to the operators/operands and function terms in the PDE, respectively. Define tree2str_merge, which can transform the binary tree into a partial differential function term.
+(3) tree.py: Define the node class and tree class in the binary tree, which correspond to the operators/operands and function terms in the PDE, respectively. Define tree2str_merge, which can transform the binary tree into a partial differential function term.
 
-(3) PDE.py: Define the PDE class. Define the evaluate_mse function to evaluate the fitness of a generated PDE.
+(4) PDE.py: Define the PDE class. Define the evaluate_mse function to evaluate the fitness of a generated PDE.
 
-(4) PDE_find.py: Use the finite difference method to calculate the gradients in the function terms. Use STRidge to find the optimal combination of all function terms (trees) in the current iteration step, and evaluate the fitness between the optimal combination (i.e., the discovered PDE) of the current iteration step and the observations.
+(5) PDE_find.py: Use the finite difference method to calculate the gradients in the function terms. Use STRidge to find the optimal combination of all function terms (trees) in the current iteration step, and evaluate the fitness between the optimal combination (i.e., the discovered PDE) of the current iteration step and the observations.
  
-(5) SGA.py: The main program of SGA-PDE.
+(6) SGA.py: The main program of SGA-PDE. Define the SGA class. The crossover operation in SGA-PDE is defined in 'corss_over' function. The mutation and replacement operation in SGA-PDE are defined in 'change' function.
 
+(7) Data_generator.py: Generate the datasets. If Metadata is used, compare the metadata with original data.
 
-(6) Data_generator.py: Generate the datasets. If Metadata is used, compare the metadata with original data.
-
-(7) MetaNN_generator.py: Optional module. Build the neural network (surrogate model) for generating Metadata and evaluate the neural network by RMSE and R2. This module is not used by default. More details about the Metadata can be found in [DL-PDE](https://arxiv.org/ftp/arxiv/papers/1908/1908.04463.pdf).
+(8) MetaNN_generator.py: Optional module. Build the neural network (surrogate model) for generating Metadata and evaluate the neural network by RMSE and R2. This module is not used by default. More details about the Metadata can be found in [DL-PDE](https://arxiv.org/ftp/arxiv/papers/1908/1908.04463.pdf).
 
 ## Data Preperation and Model Definition
 
