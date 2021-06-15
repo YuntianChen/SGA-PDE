@@ -31,14 +31,13 @@ If you encounter any problems in using the code, please contact Yuntian Chen: cy
 
 Fig. 1. Flow chart of the symbolic genetic algorithm (SGA-PDE). The yellow boxes are the function terms in the form of trees, which constitute the candidate set. The green boxes represent the genetic algorithm specially designed to optimize the binary trees. The red boxes represent the performance assessment of the discovered PDE. 
 
-## Data Preperation and Model Definition
 
-### Dataset Decription
+## Dataset Decription
 
 XXXXX
 
 
-### Loading dataset
+## Loading dataset
 
  ```python
 u = Data_generator.u
@@ -47,7 +46,7 @@ t = Data_generator.t
 x_all = Data_generator.x_all
 ```
 
-### Experiment settings for dataset
+## Experiment settings for dataset
 These settings are used for the experiments in SGA-PDE.
 These parameters do not need to be changed in the applications, and the default values should be OK.
 
@@ -66,5 +65,5 @@ The program is written in Python, and uses pytorch, scipy. A GPU is necessary, t
 
 
 
-# Author contributions
+## Author contributions
 Y. Chen and D. Zhang conceptualized and designed the study. Y. Chen, Y. Luo, and Q. Liu developed the SGA-PDE algorithms. H. Xu developed the simulation codes for the example problems considered. 
