@@ -46,7 +46,14 @@ t = Data_generator.t
 x_all = Data_generator.x_all
 ```
 
-## Experiment settings for dataset
+## Hyperparameters
+configure.py:
+    problem = 'chaffee-infante' # choose the dataset
+    seed = 0 # set the random seed
+    fine_ratio = 2 # the ratio of Metadata set to original dataset. A ratio of 2 means that the sampling interval of Metadata is twice that of original data.
+    use_metadata = False # whether to use Metadata
+    delete_edges = False # whether to delete the Metadata on the boundaries of the field where the derivatives are not accurate based on finite difference.
+
 These settings are used for the experiments in SGA-PDE.
 These parameters do not need to be changed in the applications, and the default values should be OK.
 
