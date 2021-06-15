@@ -15,6 +15,8 @@ configure.py: Experimental parameter setting and model hyperparameter setting. C
 
 setup.py: 1. Load data from Data_generator; 2. Evaluate the fitness between a PDE and observations (calculate the error between the left and right side of the PDE). The gradients involved in the PDE can be calculated by finite difference or autograd 3. Draw figures of the gradients of different orders, the left and right side of the given PDE. 4. Set the operators and operands in the SGA.
 
+tree.py: 
+
 
 
 
