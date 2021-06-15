@@ -11,20 +11,22 @@ If you encounter any problems in using the code, please contact Yuntian Chen: cy
 
 # The guide for SGA-PDE:
 ## Contents
-configure.py: Experimental parameter setting and model hyperparameter setting. Contains the process of selecting a dataset (Burgers, KdV, Chafee-infante, PDE_divide, PDE_compound).
+configure.py: 
+Experimental parameter setting and model hyperparameter setting. Contains the process of selecting a dataset (Burgers, KdV, Chafee-infante, PDE_divide, PDE_compound).
 
-setup.py: 1. Load data from Data_generator; 2. Evaluate the fitness between a PDE and observations (calculate the error between the left and right side of the PDE). The gradients involved in the PDE can be calculated by finite difference or autograd 3. Draw figures of the gradients of different orders, the left and right side of the given PDE. 4. Set the operators and operands in the SGA.
+setup.py: 
+1. Load data from Data_generator; 2. Evaluate the fitness between a PDE and observations (calculate the error between the left and right side of the PDE). The gradients involved in the PDE can be calculated by finite difference or autograd 3. Draw figures of the gradients of different orders, the left and right side of the given PDE. 4. Set the operators and operands in the SGA.
 
 
 
 
-Data_generator.py: Generate the data. If Metadata is used, compare the metadata with original data.
+Data_generator.py: 
+Generate the data. If Metadata is used, compare the metadata with original data.
 
 The optional modules for generating Metadata: 
 
-MetaNN_generator.py: Optional module. Build the neural network (surrogate model) for generating Metadata and evaluate the neural network by RMSE and R2. This module is not used by default. 
-
-More details about the Metadata can be found in [DL-PDE](https://arxiv.org/ftp/arxiv/papers/1908/1908.04463.pdf).
+MetaNN_generator.py: 
+Optional module. Build the neural network (surrogate model) for generating Metadata and evaluate the neural network by RMSE and R2. This module is not used by default. More details about the Metadata can be found in [DL-PDE](https://arxiv.org/ftp/arxiv/papers/1908/1908.04463.pdf).
 
 
 
