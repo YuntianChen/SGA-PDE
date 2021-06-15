@@ -4,7 +4,7 @@ import scipy.io as scio
 import torch
 import torch.nn as nn
 
-problem = 'chaffee-infante' # 'Burgers' # 'chaffee-infante' # 'Kdv' #'PDE_1'
+problem = 'chafee-infante' # 'Burgers' # 'chafee-infante' # 'Kdv' #'PDE_divide' # 'PDE_compound'
 seed = 0
 device = torch.device('cuda:0')
 # device = torch.device('cpu')
@@ -54,8 +54,8 @@ def divide(up, down, eta=1e-10):
         down += eta
     return up/down
 # PDE-1: Ut= -Ux/x + 0.25Uxx
-if problem == 'PDE_1':
-    u=np.load("./data/PDE_1.npy").T
+if problem == 'PDE_divide':
+    u=np.load("./data/PDE_divide.npy").T
     nx = 100
     nt = 251
     x=np.linspace(1,2,nx)
@@ -67,8 +67,8 @@ if problem == 'PDE_1':
     left_side_origin = 'left_side_origin = ut_origin'
 
 # PDE-3: Ut= d(uux)(x)
-if problem == 'PDE_3':
-    u=np.load("./data/PDE_3.npy").T
+if problem == 'PDE_compound':
+    u=np.load("./data/PDE_compound.npy").T
     nx = 100
     nt = 251
     x=np.linspace(1,2,nx)
@@ -82,7 +82,7 @@ if problem == 'PDE_3':
     
 # Burgers -u*ux+0.1*uxx
 if problem == 'Burgers':
-    data = scio.loadmat('./data/burgers_sine.mat')
+    data = scio.loadmat('./data/burgers.mat')
     u=data.get("usol")
     x=np.squeeze(data.get("x"))
     t=np.squeeze(data.get("t").reshape(1,201))
@@ -92,17 +92,9 @@ if problem == 'Burgers':
     # right_side_origin = 'right_side_origin = -1.0011*u_origin*ux_origin+0.1024*uxx_origin'
     left_side_origin = 'left_side_origin = ut_origin'
 
-# Burgers Rudy 虚数
-# data = scio.loadmat('./data/burgers.mat')
-# u = np.real(data['usol'])
-# x = np.real(data['x'][0])
-# t = np.real(data['t'])[:,0]
-# right_side = 'right_side = -u*ux+0.1*uxx'
-# left_side = 'left_side = ut'
-
 # # Kdv -0.0025uxxx-uux
 if problem == 'Kdv':
-    data = scio.loadmat('./data/Kdv-PINN.mat')
+    data = scio.loadmat('./data/Kdv.mat')
     u=data.get("uu")
     x=np.squeeze(data.get("x"))
     t=np.squeeze(data.get("tt").reshape(1,201))
@@ -112,39 +104,12 @@ if problem == 'Kdv':
     right_side_origin = 'right_side_origin = -0.0025*uxxx_origin-u_origin*ux_origin'
     # right_side_origin = 'right_side_origin = -0.0025*uxxx_origin-1.0004*u_origin*ux_origin'
     left_side_origin = 'left_side_origin = ut_origin'
-# # Kdv -0.0025uxxx-uux  x方向高精度
-# data = scio.loadmat('./data/KDV_SGA.mat')
-# struct=data['KDV_PARA_RK4_CFD6']
-# u=struct[0,0]['uu']
-# x=np.squeeze(struct[0,0]['x'])
-# t=np.squeeze(struct[0,0]['tt'])
-# right_side = 'right_side = -0.0025*uxxx-u*ux'
-# left_side = 'left_side = ut'
 
-# KdV -0.0025*(1+0.25*sin(pi*x)*uxxx-uux
-if problem == 'complex_Kdv':
-    data = scio.loadmat('./data/kdv_para_0.25.mat')
-    data=data.get('ukdv_para')
-    u=data[0][0][1]
-    x=data[0][0][2][0]
-    t=data[0][0][0][0]
-    right_side = 'right_side = -0.0025*(1+0.25*np.sin(np.pi*x))*uxxx-u*ux'
-    left_side = 'left_side = ut'
-
-# # parametric-convection-diffusion data:
-if problem == 'convection-diffusion':
-    un=np.load("parametric-convection-diffusion.npy")
-    u = un.transpose((1, 0))
-    x = np.array(torch.linspace(0,8,201))
-    t = np.array(torch.linspace(0,4.98,250))
-    right_side = 'right_side = -ux-0.25*np.sin(x)*ux+uxx'
-    left_side = 'left_side = ut'
-
-# chaffee-infante   u_t=u_xx-u+u**3
-if problem == 'chaffee-infante': # 301*200的新数据
-    u = np.load("./data/CI.npy")
-    x = np.load("./data/x.npy")
-    t = np.load("./data/t.npy") 
+# chafee-infante   u_t=u_xx-u+u**3
+if problem == 'chafee-infante': # 301*200的新数据
+    u = np.load("./data/chafee_infante_CI.npy")
+    x = np.load("./data/chafee_infante_x.npy")
+    t = np.load("./data/chafee_infante_t.npy") 
     # right_side = 'right_side = uxx-u+u**3'
     # right_side = 'right_side = 1.0002*uxx - 1.0008*u + 1.0004*u**3'
     right_side = 'right_side = - 1.0008*u + 1.0004*u**3'
