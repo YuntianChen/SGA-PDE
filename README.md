@@ -53,6 +53,19 @@ configure.py:
     fine_ratio = 2 # the ratio of Metadata set to original dataset. A ratio of 2 means that the sampling interval of Metadata is twice that of original data.
     use_metadata = False # whether to use Metadata
     delete_edges = False # whether to delete the Metadata on the boundaries of the field where the derivatives are not accurate based on finite difference.
+    aic_ratio = 1  # the hyperparameter in the AIC. lower this ratio, less important is the number of elements to AIC value.
+    
+setup.py 
+    simple_mode = True  # use the simple operators and operands 
+    use_metadata = False  # whether to use the Metadata
+    use_difference = True # whether to use finite difference or autograd to calculate the gradients
+ 
+sga.py
+    num = 20 # the population of each generation is 20
+    depth= 4 # the maximum tree depth hyperparameter to constrain the number of nesting calculations in each function term
+    
+    
+    
 
 These settings are used for the experiments in SGA-PDE.
 These parameters do not need to be changed in the applications, and the default values should be OK.
