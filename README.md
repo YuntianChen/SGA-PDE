@@ -60,6 +60,13 @@ configure.py:
     delete_edges = False # whether to delete the Metadata on the boundaries of the field where the derivatives are not accurate based on finite difference.
     
     aic_ratio = 1  # the hyperparameter in the AIC. lower this ratio, less important is the number of elements to AIC value.
+
+    max_epoch = 100 * 1000 # Hyperparameter to generate the Metadata Neural Networks.
+    
+    hidden_dim = 50 # Hyperparameter to generate the Metadata Neural Networks. Number of neurons in the hidden layer.
+
+    normal = True # Hyperparameter to generate the Metadata Neural Networks. Whether to normalize the inputs.
+
     
     
 setup.py
@@ -75,8 +82,19 @@ sga.py
 
     num = 20 # the population of each generation is 20.
     
-    depth= 4 # the maximum tree depth hyperparameter to constrain the number of nesting calculations in each function term.
+    depth = 4 # the maximum tree depth hyperparameter to constrain the number of nesting calculations in each function term.
     
+    width = 5 # the maximum forest width hyperparameter to constrain the number of function terms in the PDE.
+    
+    p_var = 0.5 # The probability of generating a node as an operand (leaf node) instead of an operator is 0.5.
+    
+    p_mute = 0.3 # The probability of mutation at each node is 0.3.
+    
+    p_cro = 0.5 # The probability of crossover between different function terms in two PDE is 0.5.
+    
+    p_rep = 1 # The probability of regenerating a term to replace the original term in the PDE.
+    
+    sga_run = 100 # the maximum generation is set to 100.
     
     
 
