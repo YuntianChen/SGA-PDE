@@ -13,20 +13,21 @@ The conventional spectral method is utilized to generate the dataset, where the 
 
 Fig. S1. Data distribution of the observations used to mine the Burgers’ equation. (A) Observation u. (B) Derivative u_t of the observation u with respect to time at all positions at the intermediate moment. (C) Derivative u_x of the observation u with respect to space at all positions at the intermediate moment.
 
-	Figure S1a shows the distribution of the observations u in Burgers’ equation. The bottom of the figure is the projection of u on the x-t plane. It can be seen that Burgers’ equation is volatile in space due to the influence of derivatives. In addition, the amplitude of observations will decay as time progresses. Figure S1b and Figure S1c, respectively, show the first derivative of the observations with respect to time (u_t) and space (u_x) at the intermediate time step (t=5). 
+Figure S1a shows the distribution of the observations u in Burgers’ equation. The bottom of the figure is the projection of u on the x-t plane. It can be seen that Burgers’ equation is volatile in space due to the influence of derivatives. In addition, the amplitude of observations will decay as time progresses. Figure S1b and Figure S1c, respectively, show the first derivative of the observations with respect to time (u_t) and space (u_x) at the intermediate time step (t=5). 
 It should be noted that the three variables in Figure S1 are all of the data used by SGA-PDE when mining Burgers’ equation. The data do not cover all of the function terms in Burgers’ equation. Therefore, this experiment can verify the ability of SGA-PDE to generate new function terms through genetic algorithms designed for the tree structure.
 
 ## Study case: Korteweg-de Vries (KdV) equation
 The Korteweg-de Vries (KdV) equation is another classical example to verify the performance of the PDE discovery algorithm(1, 7). It models the propagation of waves on shallow water surfaces. It is known as not only a prototypical example of exactly solvable models, but also one of the earliest models that have soliton solutions. The KdV equation was first discovered by Boussinesq in 1877(9), and later developed by Korteweg and de Vries in 1895 when investigating small-amplitude and long-wave motion in shallow water(10). The KdV equation takes the following form:
 
-	 
+![image](https://user-images.githubusercontent.com/41933063/122323727-20d88880-cf5a-11eb-97d2-2d730c4eb758.png)
 (S2)
 
 where a and b are constants, which are set as a=-1 and b=-0.0025, respectively. 
 Since the KdV equation contains a third-order derivative term, its volatility is greater and it is challenging to learn the correct equation structure directly from the data. In order to increase the difficulty of the experiment, we only provide the original observation u (Figure S2a) and the first derivative of u with respect to time and space (Figure S2b and Figure S2c) for the SGA-PDE. The ability of SGA-PDE to find higher-order derivatives that do not exist in the candidate set based on limited data can be verified through this experiment. 
 The conventional spectral method is utilized to generate the dataset(1). Regarding the data size, there are 201 temporal observation steps at intervals of 0.005, and 512 spatial observation steps at intervals of 0.0039. Therefore, the total number of data points is 102,912.
 
- 
+![image](https://user-images.githubusercontent.com/41933063/122323752-29c95a00-cf5a-11eb-9fd8-abb6db85ef25.png)
+
 Fig. S2. Data distribution of the observations used to mine the KdV equation. (A) Observation u. (B) u_t at all positions at the intermediate moment. (C) u_x at all positions at the intermediate moment.
 
 ## Study case: Chafee-Infante equation
