@@ -2,13 +2,15 @@
 Burgers’ equation is a fundamental partial differential equation derived by Bateman in 1915(2, 3) and later studied by Burgers in 1948(4). It can simulate the propagation and reflection of shock waves, which is common in a variety of dynamical problems, such as nonlinear acoustics(5) and gas dynamics(6). The general form of Burgers’ equation takes the following form: 
 
 	 
+![image](https://user-images.githubusercontent.com/41933063/122323321-824c2780-cf59-11eb-9379-a955073d032a.png)
 (S1)
 
 where u(x,t) is a given field with spatial (x) and temporal (t) dimension; and ν represents the diffusion coefficient or kinematic viscosity according to the problem, and it is a constant physical property.
 	Burgers’ equation involves nonlinear terms, and it also includes an interaction term of u and ∂u/∂x. Therefore, this equation is used to validate the approach’s effectiveness of discovering nonlinear terms from observations(1, 7). 
 The conventional spectral method is utilized to generate the dataset, where the diffusion coefficient ν is set as one(1, 8). In the dataset, there are 201 temporal observation steps at intervals of 0.05, and 256 spatial observation steps at intervals of 0.0625. Therefore, the total number of data points is 51,456. 
 
- 
+![image](https://user-images.githubusercontent.com/41933063/122323338-8d06bc80-cf59-11eb-83f1-51f35567b5d3.png)
+
 Fig. S1. Data distribution of the observations used to mine the Burgers’ equation. (A) Observation u. (B) Derivative u_t of the observation u with respect to time at all positions at the intermediate moment. (C) Derivative u_x of the observation u with respect to space at all positions at the intermediate moment.
 
 	Figure S1a shows the distribution of the observations u in Burgers’ equation. The bottom of the figure is the projection of u on the x-t plane. It can be seen that Burgers’ equation is volatile in space due to the influence of derivatives. In addition, the amplitude of observations will decay as time progresses. Figure S1b and Figure S1c, respectively, show the first derivative of the observations with respect to time (u_t) and space (u_x) at the intermediate time step (t=5). 
