@@ -48,10 +48,11 @@ Fig. S3. Data distribution of the observations used to mine the Chafee-Infante e
 In order to verify the ability of SGA-PDE to mine complex open-form PDEs, we generated two testing datasets based on two PDEs. The first PDE has a fractional structure (PDE_divide), as shown in Eq. S4. The second is PDE_compound, which contains a compound function (Eq. S5). 
 
 	 
+![image](https://user-images.githubusercontent.com/41933063/122698467-f1878b80-d279-11eb-9698-0127481e1357.png)
 (S4)
 
 
-	 
+![image](https://user-images.githubusercontent.com/41933063/122698486-fb10f380-d279-11eb-9d3b-8ecb8e1221a7.png)
 (S5)
 
 Specifically, to generate datasets of PDE_divide and PDE_compound, the problems are solved numerically using the finite difference method, where x∈[1,2]. The initial condition is u(x,0)=-sin⁡(πx), and the boundary condition is u(1,t)=u(2,t)=0,t>0. Both PDEs are solved with 100 spatial observation points for 250,001 timesteps. Then, temporal observation points are taken every 1,000 timesteps. Therefore, we have 100 spatial observation points and 251 temporal observation points, and the total number of the dataset is 25,100.
