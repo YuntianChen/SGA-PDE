@@ -57,6 +57,7 @@ In order to verify the ability of SGA-PDE to mine complex open-form PDEs, we gen
 
 Specifically, to generate datasets of PDE_divide and PDE_compound, the problems are solved numerically using the finite difference method, where x∈[1,2]. The initial condition is u(x,0)=-sin⁡(πx), and the boundary condition is u(1,t)=u(2,t)=0,t>0. Both PDEs are solved with 100 spatial observation points for 250,001 timesteps. Then, temporal observation points are taken every 1,000 timesteps. Therefore, we have 100 spatial observation points and 251 temporal observation points, and the total number of the dataset is 25,100.
 
+![image](https://user-images.githubusercontent.com/41933063/122698519-0e23c380-d27a-11eb-82fd-c85cae2f0021.png)
  
 Fig. S4. Data distribution of the observations used to mine the PDE with fractional structure. (A) Observation u. (B) u_t at all positions at the intermediate moment. (C) u_x at all positions at the intermediate moment.
 
