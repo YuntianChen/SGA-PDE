@@ -34,11 +34,13 @@ Fig. S2. Data distribution of the observations used to mine the KdV equation. (A
 The Chafee-Infante equation is a reaction diffusion equation proposed by Chafee and Infante in 1974(11), which describes the physical processes of material transport and particle diffusion, and it is applied in fluid mechanics, high-energy physical processes, electronics, and environmental science(12, 13). It is a kind of nonlinear evolution equation in the form of Eq. S3:
 
 	 
+![image](https://user-images.githubusercontent.com/41933063/122698393-d583ea00-d279-11eb-91d0-4dd71f27d221.png)
 (S3)
 
 where a is the diffusion coefficient, which is set as a=1 in this study. 
 The Chafee-Infante equation is also called the Newell-Whitehead equation when the diffusion coefficient a is 1(14, 15). The Chafee-Infante equation has a second-order derivative and a third-order exponential term, with strong nonlinearity. The dataset is generated via the forward difference method(1), and there are 200 temporal observation steps at intervals of 0.002, and 301 spatial observation steps at intervals of 0.01. Therefore, the total number of data points is 60,200. All of the data used by SGA-PDE to discover the Chafee-Infante equation is shown in Figure S3.
 
+![image](https://user-images.githubusercontent.com/41933063/122698418-dc126180-d279-11eb-8336-5081e223a490.png)
  
 Fig. S3. Data distribution of the observations used to mine the Chafee-Infante equation. (A) Observation u. (B) u_t at all positions at the intermediate moment. (C) u_x at all positions at the intermediate moment.
 
