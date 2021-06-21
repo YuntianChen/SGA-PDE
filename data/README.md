@@ -61,6 +61,7 @@ Specifically, to generate datasets of PDE_divide and PDE_compound, the problems 
  
 Fig. S4. Data distribution of the observations used to mine the PDE with fractional structure. (A) Observation u. (B) u_t at all positions at the intermediate moment. (C) u_x at all positions at the intermediate moment.
 
+![image](https://user-images.githubusercontent.com/41933063/122698544-1aa81c00-d27a-11eb-8565-227298ff4d90.png)
  
 Fig. S5. Data distribution of the observations used to mine the PDE with compound function. (A) Observation u. (B) u_t at all positions at the intermediate moment. (C) u_x at all positions at the intermediate moment.
 
