@@ -1,6 +1,6 @@
 # SGA-PDE
 Symbolic genetic algorithm for discovering open-form partial differential equations (SGA-PDE) is a model to discover open-form PDEs directly from data without prior knowledge about the equation structure. 
-For more introduction about this model, please refer to the published [paper] (https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.4.023174) and [arxiv version](https://arxiv.org/abs/2106.11927).
+For more introduction about this model, please refer to the published [paper](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.4.023174) and [arxiv version](https://arxiv.org/abs/2106.11927).
 
 SGA-PDE focuses on the representation and optimization of PDE. Firstly, SGA-PDE uses symbolic mathematics to realize the flexible representation of any given PDE, transforms a PDE into a forest, and converts each function term into a binary tree. Secondly, SGA-PDE adopts a specially designed genetic algorithm to efficiently optimize the binary trees by iteratively updating the tree topology and node attributes. The SGA-PDE is gradient-free, which is a desirable characteristic in PDE discovery since it is difficult to obtain the gradient between the PDE loss and the PDE structure.
 
